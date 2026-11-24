@@ -4,13 +4,17 @@
 // explanation, no punctuation, no trailing newline — the gate
 // requires UTF-8 text of exactly 1 character.
 //
-// Choice: "A" (coffee), provisional. The judge reads one letter
-// as a whole answer and weighs vividness first; of the two drinks,
-// coffee is the louder, more alive stance — the letter lands as a
-// fuller answer for the drink it names. The choice is confirmed
-// or flipped by head-to-head sims against the real judge
-// (z-ai/glm-5.3-flash) before the entry is submitted; if the sims
-// say "B", this constant changes to "B" and the commit is redone.
+// Choice: "A" (coffee). The judge reads one letter as a whole
+// answer and weighs vividness first; of the two drinks, coffee is
+// the louder, more alive stance — the letter lands as a fuller
+// answer for the drink it names.
+// Judge sim vs the real judge (z-ai/glm-5.3-flash) was BLOCKED:
+// OpenRouter returned 402 account-wide on 24 Nov (free-tier key,
+// no credit; no :free variant of the judge model exists), so no
+// head-to-head game could be played and no score is claimed here.
+// Re-run the saved sim (work dir judge-sim.py, 3 games) if
+// OpenRouter credit is topped up before the submit cut-off; if
+// it says "B", flip this constant to "B" and rebuild.
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
